@@ -12,7 +12,10 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Unzip project
-        run: unzip -q HuaweiKeyboardFix.zip
+        run: |
+          ls -la
+          for z in *.zip; do unzip -q -o "$z"; done
+          ls -la
 
       - uses: actions/setup-java@v4
         with:
